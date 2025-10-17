@@ -14,7 +14,6 @@ public class Application {
         System.out.println(INPUT);
         String input = Console.readLine();
 
-
         //계산기 객체 생성
         Calculator calculator = new Calculator();
 

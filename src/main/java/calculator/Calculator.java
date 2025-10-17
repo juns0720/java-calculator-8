@@ -37,7 +37,13 @@ public class Calculator {
 
         for (String parsedNumber : parsedNumbers) {
             try{
-                sum += Integer.parseInt(parsedNumber);
+                int number = Integer.parseInt(parsedNumber);
+                if (number < 0){
+                    throw new IllegalArgumentException();
+                }
+
+                sum += number;
+
             }
             catch (Exception e){
                 throw new IllegalArgumentException();
