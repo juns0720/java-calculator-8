@@ -14,6 +14,9 @@ public class Calculator {
 
     public List<String> parse(String input){
 
+        if (input.isBlank()){
+            return new ArrayList<>();
+        }
         //커스텀 구분자 검사
         if (input.startsWith("//")){
             int endIndex = input.indexOf("\\n");
@@ -27,12 +30,25 @@ public class Calculator {
         }
         //구분자를 통해 숫자 파싱
         return List.of(input.split(String.join("|", separators)));
+    }
 
+    public int add(List<String> parsedNumbers){
+        int sum = 0;
 
+        for (String parsedNumber : parsedNumbers) {
+            try{
+                sum += Integer.parseInt(parsedNumber);
+            }
+            catch (Exception e){
+                throw new IllegalArgumentException();
+            }
+        }
 
+        return sum;
     }
 
 
 
 
-}
+
+    }
