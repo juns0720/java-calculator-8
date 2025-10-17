@@ -14,6 +14,8 @@ public class Application {
             throw new IllegalArgumentException();
         }
 
+        Calculator calculator = new Calculator();
+
 
 
     }
